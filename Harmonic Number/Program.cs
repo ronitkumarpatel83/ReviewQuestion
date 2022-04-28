@@ -13,21 +13,24 @@ namespace Harmonic_Number
             Console.WriteLine("Welcome to Harmonic Number Program");
             Console.WriteLine("Please enter the range : ");
             int range = Convert.ToInt32(Console.ReadLine());
-            double result = 0;
-            for (int i = 1; i < range; i++)
+           if (range == 0|| range < 0)
             {
-                result = (1/(Convert.ToDouble(i)));
-                if(i == range)
-                {
-                    Console.WriteLine($"1/{i} = ");
-                }
-                else
-                {
-                    Console.WriteLine($"1/{i} + ");
-                }
+                Console.WriteLine("Please enter non-zero number");
             }
-            Console.WriteLine("The sum is = " + result);
-            Console.ReadLine();
+            else
+            {
+                float result = 0;
+                int n = range;
+                for(float a = 1;a <= range; a++)
+                {
+                    result = result + 1 / a;
+                    Console.WriteLine($"1/{a} + ");
+                }
+                Console.WriteLine("Harmonic Number upto the range "+ n +" is :" + result);
+                        
+            }
+            
+
         }
         static void Main(string[] args)
         {
